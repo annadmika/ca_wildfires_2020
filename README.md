@@ -150,6 +150,3 @@ interactive `act1_perimeters_interactive.html` ·
 
 **Animations** (`outputs/animations/`): `act_timelapse_2020.gif` (season
 time-lapse) · `act_zoom_glass.gif` (statewide → Glass-fire flythrough).
-
-See `outputs/figure_captions.md` for ready-to-use captions and
-`outputs/slide_outline.md` for the full deck outline.
