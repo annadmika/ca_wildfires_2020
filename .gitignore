@@ -1,6 +1,7 @@
-# Data (large, lives outside repo — reproducible via data/download_data.py)
-/data
-data/
+# Data: commit small/processed files, but never the large raw inputs
+# (raw is reproducible via data/download_data.py)
+data/raw/
+data/raw
 
 # macOS
 .DS_Store

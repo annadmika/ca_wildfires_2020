@@ -1,0 +1,7 @@
+value,label,pixels,acres,role
+1,Unburned / Low,2323120,516649.908414601,burn_severity
+2,Low,6728891,1496470.659665378,burn_severity
+3,Moderate,4800464,1067598.439145455,burn_severity
+4,High,3274299,728187.2130893022,burn_severity
+5,Increased Greenness,39483,8780.81559882128,greenness
+6,Non-Processing Mask,14719,3273.4296988336855,mask_excluded
