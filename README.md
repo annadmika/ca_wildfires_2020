@@ -34,9 +34,10 @@ a written roadmap for predictive / insurance / mitigation extensions.
 
 ```
 ca-wildfire-2020/
-├── data/                      # symlink -> ../data  (raw + processed)
-│   ├── raw/                   # ORIGINAL inputs — do not modify
-│   └── processed/             # cleaned/reprojected/joined outputs (nb 01 writes)
+├── data/
+│   ├── raw/                   # ORIGINAL inputs — NOT in repo (see Data availability)
+│   ├── processed/             # cleaned/reprojected/joined outputs (in repo)
+│   └── download_data.py       # fetches the raw inputs
 ├── notebooks/
 │   ├── 01_data_prep.ipynb     # cleaning, CRS, joins, raster clips  (run first)
 │   └── 02_analysis_viz.ipynb  # the 5 acts, maps, charts, animations
@@ -51,6 +52,31 @@ ca-wildfire-2020/
 ├── _build_nb02.py             # regenerates notebooks/02 (authoring script)
 └── README.md
 ```
+
+## Data availability
+
+To keep the repo lightweight and within GitHub's limits, **only the processed
+data is committed; the large raw inputs are not.**
+
+**✅ In the repo** — `data/processed/` (~78 MB, the 8 files written by notebook 01)
+and `data/download_data.py`. Notebook 02 reads *only* from `data/processed/`, so
+**you can reproduce every chart, map, and animation in notebook 02 without the
+raw data.**
+
+**❌ Not in the repo** — `data/raw/` (~678 MB). Three raw inputs exceed GitHub's
+100 MB per-file limit (`_perimeters_all.geojson` 238 MB,
+`wui_california.geojson` 212 MB, `fveg22_1.gdb` 140 MB), so the whole `raw/`
+folder is git-ignored.
+
+**How to get the raw data** — run the fetch script from the project root:
+
+```bash
+python data/download_data.py     # downloads raw inputs into data/raw/
+```
+
+The raw sources and their provenance are listed in
+[Input data](#input-data-in-dataraw-and-provenance) below. With `data/raw/`
+populated you can re-run notebook 01 end-to-end to regenerate `data/processed/`.
 
 ## Environment
 
